@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Cancellation Notification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .header {
+            text-align: center;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+        }
+        .content {
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Booking Cancellation</h1>
+    </div>
+    <div class="content">
+        <p>Dear Customer,</p>
+        <p>Please be informed that a booking with your car <strong th:text="${carName}">Car Name</strong> has been cancelled at <strong th:text="${cancelTime}">Cancel Time</strong>.</p>
+        <p>The deposit will be returned to the customer’s <u>wallet</u>.</p>
+        <p>Thank you for your understanding.</p>
+        <p>Best regards,<br>Rental Car</p>
+    </div>
+</div>
+</body>
+</html>
