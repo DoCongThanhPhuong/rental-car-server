@@ -11,7 +11,7 @@ public enum TransactionType {
     PAY_DEPOSIT("Pay deposit"),
     RECEIVE_DEPOSIT("Receive deposit"),
     REFUND_DEPOSIT("Refund deposit"),
-    OFFSET_FINAL_PAYMENT("Offset final paymetn");
+    OFFSET_FINAL_PAYMENT("Offset final payment");
 
     private final String title;
 }

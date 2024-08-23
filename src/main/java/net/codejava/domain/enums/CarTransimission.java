@@ -6,7 +6,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Getter
 public enum CarTransimission {
-    AUTOMATIVE("Tự dộng"),
-    MANUAL("Thủ công");
+    AUTOMATIVE("Automative"),
+    MANUAL("Manual");
     private final String title;
 }

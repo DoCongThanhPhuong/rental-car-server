@@ -6,7 +6,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Getter
 public enum FuelType {
-    PETRO("Xăng"),
-    DIESEL("Dầu Disel");
+    PETRO("Petro"),
+    DIESEL("Diesel");
     private final String title;
 }

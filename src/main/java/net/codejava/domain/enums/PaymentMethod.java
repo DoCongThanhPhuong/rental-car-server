@@ -8,6 +8,6 @@ import lombok.RequiredArgsConstructor;
 public enum PaymentMethod {
     MY_WALLET("My wallet"),
     CASH("Cash"),
-    BANK("Bank Transfer");
+    BANK("Bank transfer");
     private final String title;
 }
