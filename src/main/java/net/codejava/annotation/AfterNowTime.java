@@ -12,7 +12,7 @@ import net.codejava.validator.AfterNowTimeValidator;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface AfterNowTime {
-    String message() default "The Start rental time must is after now";
+    String message() default "The start rental time must be after now";
 
     Class<?>[] groups() default {};
 

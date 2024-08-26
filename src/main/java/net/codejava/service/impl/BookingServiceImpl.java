@@ -232,7 +232,7 @@ public class BookingServiceImpl implements BookingService {
             return Response.successfulResponse(
                     "Add new booking successful", bookingMapper.toBookingDetailResponseDto(saveBooking));
         } catch (Exception e) {
-            throw new AppException("Add a new booking fail");
+            throw new AppException("Add a new booking unsuccessfully");
         }
     }
 
@@ -253,9 +253,9 @@ public class BookingServiceImpl implements BookingService {
         try {
             Booking saveBooking = bookingRepo.save(newBooking);
             return Response.successfulResponse(
-                    "Update a booking successful", bookingMapper.toBookingDetailResponseDto(saveBooking));
+                    "Update a booking successfully", bookingMapper.toBookingDetailResponseDto(saveBooking));
         } catch (Exception e) {
-            throw new AppException("Update a booking fail");
+            throw new AppException("Update a booking unsuccessfully");
         }
     }
 
@@ -349,7 +349,7 @@ public class BookingServiceImpl implements BookingService {
             // Return Deposit and Transaction
             // Owner
             if (owner.getWallet() < car.getDeposit())
-                throw new AppException("Cancel booking fail. The car owner's wallet has no money");
+                throw new AppException("Cancel booking unsuccessfully. The car owner's wallet has no money");
             owner.setWallet(owner.getWallet() - car.getDeposit());
             User saveOwner = userRepo.save(owner);
             AddSystemTransactionRequestDTO ownerTran = AddSystemTransactionRequestDTO.builder()
@@ -380,7 +380,7 @@ public class BookingServiceImpl implements BookingService {
             String cancelTime = now.format(formatter).toString();
             Map<String, Object> variable = Map.of("carName", car.getName(), "cancelTime", cancelTime);
             mailSenderUtil.sendMailWithHTML(toMail, subject, template, variable);
-            return Response.successfulResponse("Cancel booking successful.");
+            return Response.successfulResponse("Cancel booking successfully.");
         } else throw new AppException("The status of this booking does not allow to cancel");
     }
 
@@ -406,7 +406,7 @@ public class BookingServiceImpl implements BookingService {
             try {
                 bookingRepo.save(booking);
             } catch (Exception e) {
-                throw new AppException("Return car fail");
+                throw new AppException("Return car unsuccessfully");
             }
             message = "Rent is greater than deposit is " + (-money) + " . Next confirm payment step";
         } else {
@@ -441,7 +441,7 @@ public class BookingServiceImpl implements BookingService {
                 booking.setStatus(BookingStatus.COMPLETED);
                 bookingRepo.save(booking);
             } catch (Exception e) {
-                throw new AppException("Return car fail");
+                throw new AppException("Return car unsuccessfully");
             }
             message = "Please confirm to return the car. The exceeding amount of XXXXX " + money
                     + " VND will be returned to your wallet.";

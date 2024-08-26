@@ -46,7 +46,7 @@ public class FeedbackController {
         Feedback feedback =
                 feedbackService.addFeedback(AuthUtil.getRequestedUser().getId(), bookingId, requestDTO);
         return ResponseEntity.status(HttpStatus.OK)
-                .body(Response.successfulResponse("Send feedback successful", feedback));
+                .body(Response.successfulResponse("Send feedback successfully", feedback));
     }
 
     @GetMapping(Endpoint.V1.Feedback.GET_RATING)

@@ -69,6 +69,6 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(value = InvalidFormatException.class)
     ResponseEntity<Response<String>> handlingInvalidFormatException(InvalidFormatException ex) {
         return ResponseEntity.badRequest()
-                .body(Response.failedResponse(HttpStatus.BAD_REQUEST.value(), "The string is not format"));
+                .body(Response.failedResponse(HttpStatus.BAD_REQUEST.value(), "Invalid string"));
     }
 }

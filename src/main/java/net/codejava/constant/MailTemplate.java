@@ -10,7 +10,7 @@ public class MailTemplate {
 
     public static class CHANGE_PASSWORD {
         public static final String CHANGE_PASSWORD_TEMPLATE = PREFIX + "/change-password.html";
-        public static final String CHANGE_PASSWORD_SUBJECT = "Rent-a-car Password Reset";
+        public static final String CHANGE_PASSWORD_SUBJECT = "Password Reset";
     }
 
     public static class RENT_A_CAR {
@@ -25,6 +25,6 @@ public class MailTemplate {
 
     public static class RETURN_A_CAR {
         public static final String RETURN_A_CAR_TEMPLATE = PREFIX + "/return-a-car.html";
-        public static final String RETURN_A_CAR_SUBJECT = PREFIX + "Your car has been returned";
+        public static final String RETURN_A_CAR_SUBJECT = "Your car has been returned";
     }
 }

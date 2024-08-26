@@ -24,12 +24,12 @@ public class TestController {
     @PostMapping(Endpoint.V1.Test.TEST01)
     public ResponseEntity<String> test1(@RequestBody BodyTestRequestDTO requestDTO) throws IOException {
         cloudinaryService.uploadFileBase64(requestDTO.base64String(), "RentalCar/Default");
-        return ResponseEntity.status(HttpStatus.OK).body("Upload success");
+        return ResponseEntity.status(HttpStatus.OK).body("Upload successfully");
     }
 
     @GetMapping(Endpoint.V1.Test.TEST02)
     public ResponseEntity<String> test2() {
         mailSenderUtil.sendBasicMail("nguyenthiminh19111964@gmail.com", "Test", "Test01");
-        return ResponseEntity.status(HttpStatus.OK).body("Send mail successful");
+        return ResponseEntity.status(HttpStatus.OK).body("Send mail successfully");
     }
 }

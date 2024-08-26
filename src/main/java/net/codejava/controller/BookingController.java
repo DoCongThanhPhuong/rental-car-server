@@ -25,7 +25,7 @@ import net.codejava.service.BookingService;
 import net.codejava.utility.AuthUtil;
 import net.codejava.utility.JwtTokenUtil;
 
-@Tag(name = "Booking Controller", description = "APIs related to Booking operations")
+@Tag(name = "Booking Controller", description = "APIs related to booking operations")
 @RestController
 @RequiredArgsConstructor
 @SecurityRequirement(name = "bearerAuth")

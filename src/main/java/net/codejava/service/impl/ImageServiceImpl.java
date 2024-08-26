@@ -33,7 +33,7 @@ public class ImageServiceImpl implements ImageService {
         try {
             cloudinaryService.deleteFile(findImage.get().getImagePublicId());
         } catch (IOException e) {
-            throw new AppException("Delete image on cloudinary fail");
+            throw new AppException("Delete image on cloudinary unsuccessfully");
         }
         // Upload New Image to Cloudinary
         try {
@@ -54,7 +54,7 @@ public class ImageServiceImpl implements ImageService {
             System.out.println("Ok3");
             return Response.successfulResponse("Update image successful", imageMapper.toImageResponseDTO(saveImage));
         } catch (IOException e) {
-            throw new AppException("Upload image to Cloudinary fail");
+            throw new AppException("Upload image to Cloudinary unsuccessfully");
         }
     }
 }

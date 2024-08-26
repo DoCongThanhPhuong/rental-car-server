@@ -127,7 +127,7 @@ public class CarServiceImpl implements CarService {
             Car saveCar = carRepo.save(newCar);
             return Response.successfulResponse("Add new car successful", carMapper.toCarDetailResponseDTO(saveCar));
         } catch (IOException e) {
-            throw new AppException("Add new car fail");
+            throw new AppException("Add new car unsuccessfully");
         }
     }
 

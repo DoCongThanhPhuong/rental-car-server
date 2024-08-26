@@ -53,7 +53,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
                 .token(token)
                 .infor(userMapper.toUserDetailResponseDTO(userResult.get()))
                 .build();
-        return Response.successfulResponse("Login successful", responseDTO);
+        return Response.successfulResponse("Login successfully", responseDTO);
     }
 
     @Override
@@ -71,7 +71,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
             User saveUser = userRepo.save(findUser.get());
             return Response.successfulResponse("Change password successful");
         } catch (Exception e) {
-            throw new AppException("Change password fail");
+            throw new AppException("Change password failed");
         }
     }
 
@@ -89,7 +89,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         try {
             userRepo.save(user);
         } catch (Exception e) {
-            throw new AppException("Reset password fail");
+            throw new AppException("Reset password failed");
         }
         // Send Mail
         String toMail = user.getEmail();
@@ -97,6 +97,6 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         String template = MailTemplate.CHANGE_PASSWORD.CHANGE_PASSWORD_TEMPLATE;
         Map<String, Object> variable = Map.of("userName", user.getUsername(), "newPassword", randomPassword_plain);
         mailSenderUtil.sendMailWithHTML(toMail, subject, template, variable);
-        return Response.successfulResponse("Reset password successful. New password sent via email");
+        return Response.successfulResponse("Reset password successfully. New password sent via email");
     }
 }

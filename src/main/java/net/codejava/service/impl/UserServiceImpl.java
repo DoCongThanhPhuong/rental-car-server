@@ -87,7 +87,7 @@ public class UserServiceImpl implements UserService {
                             .infor(userMapper.toUserDetailResponseDTO(saveUser))
                             .build());
         } catch (Exception e) {
-            throw new AppException("Register fail");
+            throw new AppException("Register unsuccessfully");
         }
     }
 
@@ -101,7 +101,7 @@ public class UserServiceImpl implements UserService {
             User saveUser = userRepo.save(newUser);
             return Response.successfulResponse("Update User Successfull", userMapper.toUserDetailResponseDTO(saveUser));
         } catch (Exception e) {
-            throw new AppException("Update User fail");
+            throw new AppException("Update User unsuccessfully");
         }
     }
 

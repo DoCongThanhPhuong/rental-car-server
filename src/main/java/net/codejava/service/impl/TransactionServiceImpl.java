@@ -79,7 +79,7 @@ public class TransactionServiceImpl implements TransactionService {
             transactionRepo.save(newTransaction);
             return newTransaction;
         } catch (Exception e) {
-            throw new AppException("Add new transaction fail");
+            throw new AppException("Add new transaction unsuccessfully");
         }
     }
 }

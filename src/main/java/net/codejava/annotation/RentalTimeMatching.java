@@ -18,7 +18,7 @@ public @interface RentalTimeMatching {
 
     String endTime();
 
-    String message() default "End rental time must after Start rental time!";
+    String message() default "End rental time must be after start rental time!";
 
     Class<?>[] groups() default {};
 

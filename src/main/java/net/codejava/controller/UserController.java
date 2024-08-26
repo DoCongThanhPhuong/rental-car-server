@@ -28,7 +28,7 @@ import net.codejava.utility.AuthUtil;
 public class UserController {
     private final UserService userService;
 
-    @Operation(summary = "Get Detail User For User", description = "This API allows users to get detail user.")
+    @Operation(summary = "Get user details", description = "This API allows users to get user details.")
     @GetMapping(Endpoint.V1.User.GET_DETAIL)
     public ResponseEntity<Response<UserDetailResponseDTO>> getDetailUser() {
         User user =
@@ -36,7 +36,7 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.OK).body(userService.getDetailUser(user.getId()));
     }
 
-    @Operation(summary = "Update User For User", description = "This API allows users to update user.")
+    @Operation(summary = "Update user", description = "This API allows users to update profile.")
     @PutMapping(Endpoint.V1.User.UPDATE)
     public ResponseEntity<Response<UserDetailResponseDTO>> updateUser(
             @RequestBody @Valid UpdUserRequestDTO requestDTO) {
@@ -45,7 +45,7 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.OK).body(userService.updateUser(user.getId(), requestDTO));
     }
 
-    @Operation(summary = "Get wallet User For User", description = "This API allows users to get my wallet.")
+    @Operation(summary = "Get wallet", description = "This API allows users to get wallet.")
     @GetMapping(Endpoint.V1.User.GET_MONEY_IN_WALLET)
     public ResponseEntity<Response<Map<String, String>>> getMyWallet() {
         return ResponseEntity.status(HttpStatus.OK)

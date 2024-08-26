@@ -29,13 +29,13 @@ public class AuthenticationController {
     private final AuthenticationService authenticationService;
     private final UserService userService;
 
-    @Operation(summary = "UC01: Log in", description = "This API allows users to log in.")
+    @Operation(summary = "Log in", description = "This API allows users to log in.")
     @PostMapping(Endpoint.V1.Auth.LOGIN)
     public ResponseEntity<Response<LoginResponseDTO>> login(@RequestBody @Valid LoginRequestDTO requestDTO) {
         return ResponseEntity.status(HttpStatus.OK).body(authenticationService.login(requestDTO));
     }
 
-    @Operation(summary = "UC04: Register an account", description = "This API allows users to register an account")
+    @Operation(summary = "Register an account", description = "This API allows users to register an account")
     @PostMapping(Endpoint.V1.Auth.REGISTER)
     public ResponseEntity<Response<LoginResponseDTO>> register(
             // @ModelAttribute
@@ -44,9 +44,7 @@ public class AuthenticationController {
         return ResponseEntity.status(HttpStatus.OK).body(userService.addUser(requestDTO));
     }
 
-    @Operation(
-            summary = "UC05: Edit Profile => Change Password",
-            description = "This API allows users to change password")
+    @Operation(summary = "Change password", description = "This API allows users to change password")
     @PatchMapping(Endpoint.V1.Auth.CHANGE_PASSWORD)
     public ResponseEntity<Response<String>> changePassword(@RequestBody @Valid ChangePasswordRequestDTO requestDTO) {
         User user =
